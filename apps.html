@@ -4,98 +4,114 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Islamic Apps - Sahil Hasnain Qadri</title>
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DLCJ4NCWY1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DLCJ4NCWY1');
-</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-DLCJ4NCWY1');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{min-height:100vh;background:#0a0a0f;font-family:'Inter',sans-serif;display:flex;justify-content:center;padding:40px 20px}
-.container{max-width:480px;width:100%}
-.back{font-size:14px;color:rgba(255,255,255,0.4);text-decoration:none;display:inline-flex;align-items:center;gap:6px;margin-bottom:40px}
-.back:hover{color:#FFD700}
-.page-title{font-size:28px;font-weight:700;color:#fff;margin-bottom:6px}
-.page-desc{font-size:14px;color:rgba(255,255,255,0.4);margin-bottom:40px}
-.links{display:flex;flex-direction:column;gap:14px}
-.link{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:18px 20px;text-decoration:none;transition:all .2s}
-.link:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,215,0,0.2);transform:translateY(-2px)}
-.link-icon{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,rgba(255,215,0,0.12),rgba(255,165,0,0.08));display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
-.link-text{flex:1}
-.link-title{font-size:16px;font-weight:600;color:#fff}
-.link-desc{font-size:13px;color:rgba(255,255,255,0.4);margin-top:3px}
-.link-arrow{color:rgba(255,255,255,0.2);font-size:20px}
-.footer{text-align:center;margin-top:60px;font-size:12px;color:rgba(255,255,255,0.15)}
+body{min-height:100vh;background:#06060a;font-family:'Plus Jakarta Sans',sans-serif;padding:24px 16px;overflow-x:hidden}
+.noise{position:fixed;top:0;left:0;width:100%;height:100%;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:0}
+.orb{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0}
+.orb-1{width:400px;height:400px;background:rgba(16,185,129,0.06);top:-100px;right:-100px}
+.orb-2{width:350px;height:350px;background:rgba(255,215,0,0.04);bottom:-50px;left:-100px}
+.container{max-width:540px;width:100%;margin:0 auto;position:relative;z-index:1}
+.header{margin-bottom:40px;animation:fadeUp .6s ease}
+.back{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:rgba(255,255,255,0.35);text-decoration:none;font-weight:600;margin-bottom:24px;transition:color .2s}
+.back:hover{color:#10b981}
+.back svg{width:16px;height:16px}
+.page-title{font-size:36px;font-weight:800;color:#fff;margin-bottom:8px;letter-spacing:-0.5px}
+.page-desc{font-size:15px;color:rgba(255,255,255,0.35);font-weight:500}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.app{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-radius:20px;padding:24px 20px;text-decoration:none;transition:all .3s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden;animation:fadeUp .6s ease backwards}
+.app:nth-child(1){animation-delay:.05s}
+.app:nth-child(2){animation-delay:.1s}
+.app:nth-child(3){animation-delay:.15s}
+.app:nth-child(4){animation-delay:.2s}
+.app:nth-child(5){animation-delay:.25s}
+.app:nth-child(6){animation-delay:.3s}
+.app::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(16,185,129,0.3),transparent);opacity:0;transition:opacity .3s}
+.app:hover{border-color:rgba(16,185,129,0.2);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.3)}
+.app:hover::before{opacity:1}
+.app-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:16px;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.1)}
+.app-title{font-size:16px;font-weight:700;color:#fff;margin-bottom:4px}
+.app-desc{font-size:12px;color:rgba(255,255,255,0.3);font-weight:500;line-height:1.5}
+.app-badge{display:inline-flex;align-items:center;gap:4px;margin-top:12px;font-size:10px;color:#10b981;font-weight:600;text-transform:uppercase;letter-spacing:1px}
+.app-badge svg{width:12px;height:12px}
+.footer{text-align:center;margin-top:60px;font-size:12px;color:rgba(255,255,255,0.12);font-weight:500;animation:fadeUp .6s ease backwards;animation-delay:.4s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 </style>
 </head>
 <body>
+<div class="noise"></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
 <div class="container">
-  <a class="back" href="index.html">← Back</a>
-  <div class="page-title">Islamic Apps</div>
-  <div class="page-desc">Free apps for the Ummah</div>
-
-  <div class="links">
-    <a class="link" href="https://play.google.com/store/apps/details?id=com.owaisrazaqadri" target="_blank">
-      <div class="link-icon">🎙️</div>
-      <div class="link-text">
-        <div class="link-title">Owais Raza Qadri</div>
-        <div class="link-desc">2700+ Soulful Naat Collection</div>
-      </div>
-      <div class="link-arrow">→</div>
+  <div class="header">
+    <a class="back" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back
     </a>
-
-    <a class="link" href="https://play.google.com/store/apps/details?id=com.duroodepak" target="_blank">
-      <div class="link-icon">📿</div>
-      <div class="link-text">
-        <div class="link-title">Durood Time</div>
-        <div class="link-desc">1 Crore Durood Planner & Dalailul Khairat</div>
+    <div class="page-title">Islamic Apps</div>
+    <div class="page-desc">Free apps for the Ummah</div>
+  </div>
+  <div class="grid">
+    <a class="app" href="https://play.google.com/store/apps/details?id=com.owaisrazaqadri" target="_blank">
+      <div class="app-icon">&#x1F399;</div>
+      <div class="app-title">Owais Raza Qadri</div>
+      <div class="app-desc">2700+ soulful naat collection</div>
+      <div class="app-badge">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+        Play Store
       </div>
-      <div class="link-arrow">→</div>
     </a>
-
-    <a class="link" href="https://play.google.com/store/apps/details?id=com.livequran" target="_blank">
-      <div class="link-icon">📖</div>
-      <div class="link-text">
-        <div class="link-title">Al Quran</div>
-        <div class="link-desc">Read, Listen & Learn Quran</div>
+    <a class="app" href="https://play.google.com/store/apps/details?id=com.duroodepak" target="_blank">
+      <div class="app-icon">&#x1F4FF;</div>
+      <div class="app-title">Durood Time</div>
+      <div class="app-desc">1 Crore Durood Planner & Dalailul Khairat</div>
+      <div class="app-badge">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+        Play Store
       </div>
-      <div class="link-arrow">→</div>
     </a>
-
-    <a class="link" href="https://play.google.com/store/apps/details?id=com.shifashareef" target="_blank">
-      <div class="link-icon">💚</div>
-      <div class="link-text">
-        <div class="link-title">Shifa Shareef</div>
-        <div class="link-desc">Ash-Shifa by Qadi Iyad</div>
+    <a class="app" href="https://play.google.com/store/apps/details?id=com.livequran" target="_blank">
+      <div class="app-icon">&#x1F4D6;</div>
+      <div class="app-title">Al Quran</div>
+      <div class="app-desc">Read, listen & learn Quran</div>
+      <div class="app-badge">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+        Play Store
       </div>
-      <div class="link-arrow">→</div>
     </a>
-
-    <a class="link" href="https://play.google.com/store/apps/details?id=com.islamiclib" target="_blank">
-      <div class="link-icon">📚</div>
-      <div class="link-text">
-        <div class="link-title">Islamic Library</div>
-        <div class="link-desc">Books, Articles & Islamic Knowledge</div>
+    <a class="app" href="https://play.google.com/store/apps/details?id=com.shifashareef" target="_blank">
+      <div class="app-icon">&#x1F49A;</div>
+      <div class="app-title">Shifa Shareef</div>
+      <div class="app-desc">Ash-Shifa by Qadi Iyad</div>
+      <div class="app-badge">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+        Play Store
       </div>
-      <div class="link-arrow">→</div>
     </a>
-
-    <a class="link" href="https://play.google.com/store/apps/details?id=com.naatproduction" target="_blank">
-      <div class="link-icon">🎤</div>
-      <div class="link-text">
-        <div class="link-title">Naat Production</div>
-        <div class="link-desc">Premium Naat & Hamd Collection</div>
+    <a class="app" href="https://play.google.com/store/apps/details?id=com.islamiclib" target="_blank">
+      <div class="app-icon">&#x1F4DA;</div>
+      <div class="app-title">Islamic Library</div>
+      <div class="app-desc">Books, articles & knowledge</div>
+      <div class="app-badge">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+        Play Store
       </div>
-      <div class="link-arrow">→</div>
+    </a>
+    <a class="app" href="https://play.google.com/store/apps/details?id=com.naatproduction" target="_blank">
+      <div class="app-icon">&#x1F3A4;</div>
+      <div class="app-title">Naat Production</div>
+      <div class="app-desc">Premium naat & hamd collection</div>
+      <div class="app-badge">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+        Play Store
+      </div>
     </a>
   </div>
-
-  <div class="footer">Made for the Ummah</div>
+  <div class="footer">All apps are free & open source</div>
 </div>
 </body>
 </html>

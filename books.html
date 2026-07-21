@@ -4,120 +4,128 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Translated Books - Sahil Hasnain Qadri</title>
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DLCJ4NCWY1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DLCJ4NCWY1');
-</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-DLCJ4NCWY1');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{min-height:100vh;background:#0a0a0f;font-family:'Inter',sans-serif;display:flex;justify-content:center;padding:40px 20px}
-.container{max-width:520px;width:100%}
-.back{font-size:14px;color:rgba(255,255,255,0.4);text-decoration:none;display:inline-flex;align-items:center;gap:6px;margin-bottom:40px}
+body{min-height:100vh;background:#06060a;font-family:'Plus Jakarta Sans',sans-serif;padding:24px 16px;overflow-x:hidden}
+.noise{position:fixed;top:0;left:0;width:100%;height:100%;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:0}
+.orb{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0}
+.orb-1{width:400px;height:400px;background:rgba(255,215,0,0.06);top:-100px;left:-100px}
+.orb-2{width:350px;height:350px;background:rgba(139,92,246,0.04);bottom:-50px;right:-100px}
+.container{max-width:540px;width:100%;margin:0 auto;position:relative;z-index:1}
+.header{margin-bottom:40px;animation:fadeUp .6s ease}
+.back{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:rgba(255,255,255,0.35);text-decoration:none;font-weight:600;margin-bottom:24px;transition:color .2s}
 .back:hover{color:#FFD700}
-.page-title{font-size:28px;font-weight:700;color:#fff;margin-bottom:6px}
-.page-desc{font-size:14px;color:rgba(255,255,255,0.4);margin-bottom:50px}
-.book{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:20px;padding:32px;margin-bottom:20px;transition:all .3s}
-.book:hover{border-color:rgba(255,215,0,0.15)}
-.book-header{display:flex;gap:24px;align-items:flex-start;margin-bottom:24px}
-.book-cover{width:100px;height:140px;border-radius:10px;border:1px solid rgba(255,215,0,0.15);flex-shrink:0;overflow:hidden;background:#111}
+.back svg{width:16px;height:16px}
+.page-title{font-size:36px;font-weight:800;color:#fff;margin-bottom:8px;letter-spacing:-0.5px}
+.page-desc{font-size:15px;color:rgba(255,255,255,0.35);font-weight:500}
+.books{display:flex;flex-direction:column;gap:16px}
+.book{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-radius:24px;padding:28px;transition:all .4s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden;animation:fadeUp .6s ease backwards}
+.book:nth-child(1){animation-delay:.1s}
+.book:nth-child(2){animation-delay:.15s}
+.book:nth-child(3){animation-delay:.2s}
+.book:nth-child(4){animation-delay:.25s}
+.book::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,215,0,0.2),transparent);opacity:0;transition:opacity .3s}
+.book:hover{border-color:rgba(255,215,0,0.15);transform:translateY(-4px);box-shadow:0 24px 48px rgba(0,0,0,0.4)}
+.book:hover::before{opacity:1}
+.book-inner{display:flex;gap:20px;align-items:flex-start}
+.book-cover{width:90px;height:126px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1px solid rgba(255,255,255,0.06)}
 .book-cover img{width:100%;height:100%;object-fit:cover}
-.book-cover-text{font-family:'Amiri',serif;font-size:28px;color:#FFD700;text-align:center;line-height:1.3;display:flex;align-items:center;justify-content:center;width:100%;height:100%;background:linear-gradient(135deg,#1a1500,#2a2000)}
+.book-cover-placeholder{width:100%;height:100%;background:linear-gradient(135deg,#0f1a0f,#1a2a1a);display:flex;align-items:center;justify-content:center;font-family:'Amiri',serif;font-size:16px;color:rgba(255,215,0,0.6);text-align:center;padding:8px;line-height:1.2}
 .book-info{flex:1}
-.book-tag{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,215,0,0.5);margin-bottom:8px}
-.book-title{font-size:22px;font-weight:700;color:#fff;margin-bottom:6px}
-.book-author{font-size:14px;color:rgba(255,255,255,0.5);margin-bottom:12px}
-.book-desc{font-size:14px;color:rgba(255,255,255,0.45);line-height:1.7}
-.book-actions{display:flex;gap:12px;margin-top:24px}
-.btn{padding:12px 24px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;transition:all .2s;cursor:pointer;border:none}
-.btn-primary{background:linear-gradient(135deg,#FFD700,#FFA500);color:#000}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,215,0,0.2)}
+.book-tag{display:inline-block;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#FFD700;font-weight:700;margin-bottom:8px;background:rgba(255,215,0,0.1);padding:4px 10px;border-radius:6px}
+.book-title{font-size:20px;font-weight:700;color:#fff;margin-bottom:4px}
+.book-desc{font-size:13px;color:rgba(255,255,255,0.35);line-height:1.6;margin-bottom:16px;font-weight:500}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;font-size:13px;font-weight:700;text-decoration:none;transition:all .3s;border:none;cursor:pointer}
+.btn-primary{background:linear-gradient(135deg,#FFD700,#FF8C00);color:#06060a;box-shadow:0 8px 24px rgba(255,215,0,0.2)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(255,215,0,0.3)}
 .btn-secondary{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);color:#fff}
-.btn-secondary:hover{background:rgba(255,255,255,0.1)}
-.footer{text-align:center;margin-top:60px;font-size:12px;color:rgba(255,255,255,0.15)}
+.btn-secondary:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.15)}
+.btn-group{display:flex;gap:10px;flex-wrap:wrap}
+.footer{text-align:center;margin-top:60px;font-size:12px;color:rgba(255,255,255,0.12);font-weight:500;animation:fadeUp .6s ease backwards;animation-delay:.4s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 </style>
 </head>
 <body>
+<div class="noise"></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
 <div class="container">
-  <a class="back" href="index.html">← Back</a>
-  <div class="page-title">Translated Books</div>
-  <div class="page-desc">Classical Islamic works translated to English</div>
-
-  <div class="book">
-    <div class="book-header">
-      <div class="book-cover">
-        <img src="covers/shifa-shareef.png" alt="Ash-Shifa Cover">
-      </div>
-      <div class="book-info">
-        <div class="book-tag">Translation</div>
-        <div class="book-title">Ash-Shifa</div>
-        <div class="book-author">Imam Qadi Iyad (1083 - 1145 CE)</div>
-        <div class="book-desc">A complete English translation of the celebrated masterpiece on the virtues, character, and station of Prophet Muhammad ﷺ in the Quran and Hadith.</div>
+  <div class="header">
+    <a class="back" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back
+    </a>
+    <div class="page-title">Translated Books</div>
+    <div class="page-desc">Classical Islamic works translated to English</div>
+  </div>
+  <div class="books">
+    <div class="book">
+      <div class="book-inner">
+        <div class="book-cover">
+          <img src="covers/shifa-shareef.png" alt="Ash-Shifa">
+        </div>
+        <div class="book-info">
+          <div class="book-tag">Translation</div>
+          <div class="book-title">Ash-Shifa</div>
+          <div class="book-desc">A complete translation of Imam Qadi Iyad's celebrated masterpiece on the virtues and station of Prophet Muhammad &#x2642;</div>
+          <div class="btn-group">
+            <a class="btn btn-primary" href="https://github.com/SahilHasnain/sahilhasnain.github.io/releases/download/v1.0/shifa-shareef-english-digital.pdf" target="_blank">Download PDF</a>
+            <a class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=com.shifashareef" target="_blank">Get App</a>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="book-actions">
-      <a class="btn btn-primary" href="https://github.com/SahilHasnain/sahilhasnain.github.io/releases/download/v1.0/shifa-shareef-english-digital.pdf" target="_blank">Download PDF</a>
-      <a class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=com.shifashareef" target="_blank">Get the App</a>
+    <div class="book">
+      <div class="book-inner">
+        <div class="book-cover">
+          <img src="covers/ikhteyarate-mustafa.png" alt="Ikhteyarate Mustafa">
+        </div>
+        <div class="book-info">
+          <div class="book-tag">Translation</div>
+          <div class="book-title">Ikhteyarate Mustafa</div>
+          <div class="book-desc">The chosen practices and sunnah of Prophet Muhammad &#x2642; — daily routines, spiritual habits, and blessed traditions</div>
+          <div class="btn-group">
+            <a class="btn btn-primary" href="https://github.com/SahilHasnain/sahilhasnain.github.io/releases/download/v1.3/ikhteyarate-mustafa-english-digital.pdf" target="_blank">Download PDF</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="book">
+      <div class="book-inner">
+        <div class="book-cover">
+          <div class="book-cover-placeholder">Addawatul Makkiyyah</div>
+        </div>
+        <div class="book-info">
+          <div class="book-tag">Translation</div>
+          <div class="book-title">Addawatul Makkiyyah</div>
+          <div class="book-desc">A definitive work on the Prophet's knowledge of the unseen (Ilm-e-Ghaib) by Imam Ahmad Raza Khan</div>
+          <div class="btn-group">
+            <a class="btn btn-primary" href="https://github.com/SahilHasnain/sahilhasnain.github.io/releases/download/v1.1/addawatul-makkiyyah-english-digital.pdf" target="_blank">Download PDF</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="book">
+      <div class="book-inner">
+        <div class="book-cover">
+          <img src="covers/durood-stories.png" alt="Durood Stories">
+        </div>
+        <div class="book-info">
+          <div class="book-tag">Collection</div>
+          <div class="book-title">Durood Stories</div>
+          <div class="book-desc">True accounts of the power of invoking blessings upon the Prophet &#x2642;</div>
+          <div class="btn-group">
+            <a class="btn btn-primary" href="https://github.com/SahilHasnain/sahilhasnain.github.io/releases/download/v1.2/durood-stories.pdf" target="_blank">Download PDF</a>
+            <a class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=com.duroodepak" target="_blank">Get App</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-  <div class="book">
-    <div class="book-header">
-      <div class="book-cover">
-        <div class="book-cover-text">Addawatul Makkiyyah</div>
-      </div>
-      <div class="book-info">
-        <div class="book-tag">Translation</div>
-        <div class="book-title">Addawatul Makkiyyah</div>
-        <div class="book-author">Imam Ahmad Raza Khan (1856 - 1921 CE)</div>
-        <div class="book-desc">A definitive scholarly work on the Prophet's knowledge of the unseen (Ilm-e-Ghaib), refuting distortions and establishing the Ahle Sunnat belief with Quranic and Hadith evidence.</div>
-      </div>
-    </div>
-    <div class="book-actions">
-      <a class="btn btn-primary" href="https://github.com/SahilHasnain/sahilhasnain.github.io/releases/download/v1.1/addawatul-makkiyyah-english-digital.pdf" target="_blank">Download PDF</a>
-    </div>
-  </div>
-
-  <div class="book">
-    <div class="book-header">
-      <div class="book-cover">
-        <img src="covers/durood-stories.png" alt="Durood Stories Cover">
-      </div>
-      <div class="book-info">
-        <div class="book-tag">Collection</div>
-        <div class="book-title">Durood Stories</div>
-        
-        <div class="book-desc">A collection of blessed stories and incidents showcasing the virtues, blessings, and miracles of Durood Shareef from authentic sources.</div>
-      </div>
-    </div>
-    <div class="book-actions">
-      <a class="btn btn-primary" href="https://github.com/SahilHasnain/sahilhasnain.github.io/releases/download/v1.2/durood-stories.pdf" target="_blank">Download PDF</a>
-      <a class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=com.duroodepak" target="_blank">Get the App</a>
-    </div>
-  </div>
-
-  <div class="book">
-    <div class="book-header">
-      <div class="book-cover">
-        <img src="covers/ikhteyarate-mustafa.png" alt="Ikhteyarate Mustafa Cover">
-      </div>
-      <div class="book-info">
-        <div class="book-tag">Translation</div>
-        <div class="book-title">Ikhteyarate Mustafa</div>
-        <div class="book-author"></div>
-        <div class="book-desc">A comprehensive work on the chosen practices and sunnah of Prophet Muhammad ﷺ, covering daily routines, spiritual habits, and blessed traditions.</div>
-      </div>
-    </div>
-    <div class="book-actions">
-      <a class="btn btn-primary" href="https://github.com/SahilHasnain/sahilhasnain.github.io/releases/download/v1.3/ikhteyarate-mustafa-english-digital.pdf" target="_blank">Download PDF</a>
-    </div>
-  </div>
-
   <div class="footer">More translations coming soon, Insha'Allah</div>
 </div>
 </body>
