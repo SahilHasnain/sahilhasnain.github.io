@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:600px;height:900px;overflow:hidden;font-family:"Georgia","Times New Roman",serif}
+.cover-page{
+  background:linear-gradient(160deg,#0a2e1f 0%,#0f5a3e 40%,#147a54 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  height:100vh;text-align:center;color:#fff;position:relative
+}
+.cover-page::before{
+  content:"";position:absolute;top:0;left:0;right:0;bottom:0;
+  background:radial-gradient(circle at 20% 30%,rgba(184,148,79,0.08) 0%,transparent 50%),
+  radial-gradient(circle at 80% 70%,rgba(184,148,79,0.06) 0%,transparent 50%);
+  pointer-events:none
+}
+.cover-content{position:relative;z-index:1;padding:2rem}
+.cover-ornament{color:#b8944f;font-size:2.4rem;margin-bottom:1.5rem;letter-spacing:0.3em}
+.cover-rule{width:6rem;height:2px;background:#b8944f;margin:0 auto 1.5rem;border:none}
+.cover-title{font-size:3rem;font-weight:700;color:#fff;margin:0 0 0.6rem;line-height:1.2;letter-spacing:0.02em}
+.cover-subtitle{font-size:1.1rem;color:#d4b876;margin:0 0 2rem;font-style:italic;letter-spacing:0.03em;line-height:1.5;max-width:28rem}
+</style>
+</head>
+<body>
+<section class="cover-page">
+  <div class="cover-content">
+    <div class="cover-ornament">&#x2726; &#x2726; &#x2726;</div>
+    <hr class="cover-rule">
+    <h1 class="cover-title">Durood Stories</h1>
+    <p class="cover-subtitle">True accounts of the power of invoking blessings upon the Prophet &#x2642;</p>
+    <hr class="cover-rule">
+  </div>
+</section>
+</body>
+</html>
